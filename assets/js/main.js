@@ -148,7 +148,7 @@ $(document).ready(function () {
         "use strict";
         $('.testimonial-carousel').owlCarousel({
             loop: true,
-            autoplay: true,
+            autoplay: false,
             margin: 10,
             nav: false,
             dots: true,

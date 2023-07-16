@@ -51,6 +51,7 @@ Typography
     --grayish-violet: #f5f4f7;
     --btn-bg1: #875AFF;
     --btn-bg2: #875AFF;
+    --btn-after-bg: #7441ff;
     --soft-green: #ccf888;
     --soft-red: #FE5758;
     --soft-red: #d82a68;
@@ -334,7 +335,7 @@ textarea.form-control {
 
 .form-control:focus,
 .form-select:focus {
-    box-shadow: 0 0 0 4px rgba(81, 182, 187, 0.1);
+    box-shadow: 0 0 0 4px rgba(134, 90, 255, 0.1);
     border: 1px solid var(--primary-color);
 }
 
@@ -677,7 +678,7 @@ figure {
 }
 
 .logo {
-    max-width: 130px;
+    max-width: 100px;
     min-width: 100px;
 }
 
@@ -806,20 +807,28 @@ Reuseble style section start
 Offcanvas section start 
 ----------------------------------------------*/
 .offcanvas {
-    background: var(--bg-color1);
+    background: var(--white);
 }
 
 .offcanvas.offcanvas-end {
     border-left: 1px solid var(--border-color3);
+    transition: .8s ease-out;
 }
 
 .offcanvas-backdrop {
-    background-color: #e4ebf87a;
+    background-color: rgba(227, 234, 247, 0.478);
     backdrop-filter: blur(8.8px);
+    right: 0;
+    width: 0;
+    left: auto;
+    transition: all 1.5s ease-in-out;
 }
 
 .offcanvas-backdrop.show {
+
     opacity: 1;
+    width: 100%;
+
 }
 
 /*----------------------------------------------
@@ -1012,8 +1021,9 @@ Offcanvas end
 }
 
 .cmn-btn {
+    position: relative;
     background: var(--btn-bg1);
-    padding: 12px 20px;
+    padding: 8px 15px;
     border-radius: 5px;
     border: 1px solid var(--btn-bg1);
     transition: all .3s ease-in-out;
@@ -1025,10 +1035,29 @@ Offcanvas end
     font-weight: 500;
     text-transform: capitalize;
     font-family: var(--heading-font);
+    z-index: 1;
 
     &:hover {
         color: var(--white);
         background-color: var(--btn-bg2);
+
+        &::after {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        height: 0;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--btn-after-bg);
+        transition: var(--transition);
+        border-radius: 5px;
+        z-index: -1;
     }
 }
 
@@ -1103,7 +1132,8 @@ Offcanvas end
 }
 
 .get-start-btn {
-    padding: 12px 20px;
+    position: relative;
+    padding: 8px 15px;
     border-radius: 5px;
     font-size: 16px;
     display: flex;
@@ -1115,11 +1145,30 @@ Offcanvas end
     transition: var(--transition);
     text-transform: capitalize;
     border: 1px solid var(--btn-bg1);
+    z-index: 1;
 
     &:hover {
         background-color: var(--btn-bg2);
         color: var(--white);
         border: 1px solid var(--btn-bg2);
+
+        &::after {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        height: 0;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--btn-after-bg);
+        transition: var(--transition);
+        border-radius: 5px;
+        z-index: -1;
     }
 }
 
@@ -1345,7 +1394,7 @@ section {
 
 .section-subtitle {
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--primary-color);
     font-weight: 400;
     margin-bottom: 20px;
@@ -1830,7 +1879,7 @@ Padding bottom
     background-color: var(--white);
     box-shadow: var(--shadow2);
     z-index: 999;
-    padding: 20px 0;
+    padding: 15px 0;
 
     .navbar-nav .nav-link {
         color: var(--heading-color);
@@ -2219,7 +2268,8 @@ Calculator end
     &:nth-child(odd) {
         .cmn-box {
             background-color: var(--bg-color1);
-            .icon-box{
+
+            .icon-box {
                 background-color: var(--white);
                 color: var(--primary-color);
             }
@@ -2255,6 +2305,7 @@ Calculator end
     font-size: 30px;
     background-color: var(--primary-color);
     color: var(--white);
+
 }
 
 .text-box {
@@ -2310,9 +2361,7 @@ Feature end
 .about-section {
     background-color: var(--bg-color1);
 
-    .about-thumb{
-        height: 100%;
-        width: 100%;
+    .about-thumb {
         border-radius: 0 50px 50px 0;
 
         img {
@@ -2321,8 +2370,9 @@ Feature end
     }
 
     .about-content {
-        max-width: 650px;
+        max-width: 695px;
         padding-right: 30px;
+
         .btn-area {
             margin-top: 30px;
         }
@@ -2394,7 +2444,18 @@ How it works end
 }
 
 .why-choose-us-thum {
-    max-width: 630px;
+    border-radius: 0 50px 50px 0;
+    margin-left: auto;
+
+    img {
+        border-radius: 50px 0 0 50px;
+    }
+}
+
+.why-choose-us-content {
+    max-width: 695px;
+    margin-left: auto;
+    padding-left: 30px;
 }
 
 .choose-us-list {
@@ -2402,12 +2463,16 @@ How it works end
 
     .item {
         margin-bottom: 15px;
-        display: flex;
-        align-items: center;
 
-        img {
-            margin-right: 5px;
-            width: 30px;
+        .item-title {
+            display: flex;
+            align-items: center;
+        }
+
+        i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            font-size: 20px;
         }
     }
 }
@@ -2432,7 +2497,7 @@ How it works end
     .testimonial-box {
         padding: 20px;
         background: var(--white);
-        border-radius: 15px;
+        border-radius: 5px;
         transition: var(--transition);
         border: 1px solid var(--border-color1);
 
@@ -2499,6 +2564,19 @@ Testimonial end
 
 .faq-section {
     background-color: var(--bg-color1);
+
+    .faq-content {
+        max-width: 695px;
+        padding-right: 30px;
+    }
+
+    .faq-thum {
+        border-radius: 0 50px 50px 0;
+
+        img {
+            border-radius: 0 50px 50px 0;
+        }
+    }
 
     .accordion-button {
         padding-left: 0;
@@ -2589,10 +2667,10 @@ Faq end
 
 .blog-box {
     background: var(--white);
-    border-radius: 5px;
-    box-shadow: var(--shadow3);
-    border: 1px solid var(--border-color1);
-    transition: var(--transition);
+    // border-radius: 5px;
+    // box-shadow: var(--shadow3);
+    // border: 1px solid var(--border-color1);
+    // transition: var(--transition);
 
     &:hover {
         box-shadow: none;
@@ -2609,19 +2687,24 @@ Faq end
     .img-box {
         overflow: hidden;
         position: relative;
-        border-radius: 5px;
 
         img {
             transition: var(--transition);
             width: 100%;
-            height: 15vw;
-            max-height: 270px;
-            border-radius: 5px;
+            height: 270px;
+
         }
     }
 
     .content-box {
+        position: relative;
         padding: 20px;
+        box-shadow: var(--shadow1);
+        padding: 50px 15px 20px;
+        position: relative;
+        margin: -40px 20px 0;
+        z-index: 1;
+        background: var(--white);
 
         .blog-btn {
             color: var(--primary-color);
@@ -2678,13 +2761,21 @@ Faq end
 
 .date {
     position: absolute;
-    padding: 5px 10px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    font-size: 14px;
-    border-radius: 5px;
-    bottom: 15px;
-    right: 15px;
+    width: 70px;
+    height: 65px;
+    background: var(--primary-color);
+    top: -35px;
+    left: 50%;
+    text-align: center;
+    padding: 5px;
+    transform: translateX(-50%);
+
+    p,
+    h4 {
+        color: var(--white);
+        text-transform: uppercase;
+    }
+
 }
 
 // Responsive Blog section start
@@ -2748,13 +2839,39 @@ Faq end
 Blog end
 ----------------------------------------------*/
 
+// App section start
+.app-section {
+    background-color: var(--bg-color1);
+}
 
+.app-btn {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    z-index: 1;
+
+    .icon-area {
+        margin-right: 15px;
+
+        i {
+            font-size: 40px;
+            color: var(--primary-color);
+        }
+    }
+}
+
+.play-store-btn {
+    margin-right: 15px;
+}
+
+// App end
 /*----------------------------------------------
 11. Newsletter section start
 ----------------------------------------------*/
 .newsletter-section {
-    background-color: var(--bg-color1);
-    background-image: url(../img/background/footer-bg-shape.png);
 
     .content-area {
         font-family: var(--heading-font);
@@ -2762,6 +2879,8 @@ Blog end
         color: var(--heading-color);
         text-transform: uppercase;
         line-height: 40px;
+        text-align: center;
+        margin-bottom: 30px;
 
         .subscribe-small-text {
             font-size: 22px;
@@ -2785,6 +2904,7 @@ Blog end
             background-color: var(--white);
             padding: 10px 165px 10px 20px;
             border-color: var(--primary-color-opacity-low);
+            box-shadow: var(--shadow3);
 
             &:focus {
                 border-color: var(--primary-color);
@@ -2806,6 +2926,7 @@ Blog end
             &:hover {
                 background-color: var(--btn-bg2);
                 color: var(--white);
+
             }
         }
     }
@@ -2883,6 +3004,8 @@ Newsletter end
 
 .footer-section {
     background-color: #111111;
+    border-radius: 50px 50px 0 0;
+    margin: 20px 20px 0 20px;
 
     .footer-widget {
         .widget-title {
@@ -2974,6 +3097,15 @@ Newsletter end
     }
 }
 
+// Responsive footer section start
+@media (max-width: 575px) {
+    .footer-section {
+        border-radius: 0;
+        margin: 0;
+    }
+}
+
+// Responsive footer section end
 //Rtl Footer section start
 .rtl {
     .footer-section .footer-widget {
@@ -3075,7 +3207,7 @@ Copyright end
     padding-bottom: 100px;
     position: relative;
     z-index: 1;
-    background: linear-gradient(rgba(2, 26, 46, 0.6), rgba(2, 25, 44, 0.6)), url(../img/banner/pexels-anete-lusina-6353681.jpg);
+    background: linear-gradient(rgb(255 255 255 / 85%), rgba(83 73 73 / 60%)), url(../img/banner/banner-bg.jpg);
     background-size: cover;
     background-position: 100% 75%;
 
