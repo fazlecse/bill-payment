@@ -188,22 +188,22 @@ $(document).ready(function () {
         );
         return $state;
     };
-    function formatState (state) {
+    function formatState(state) {
         if (!state.id) {
-          return state.text;
+            return state.text;
         }
-      
+
         var baseUrl = "assets/img/mini-flag";
         var $state = $(
-          '<span><img class="img-flag" /> <span></span></span>'
+            '<span><img class="img-flag" /> <span></span></span>'
         );
-      
+
         // Use .text() instead of HTML string concatenation to avoid script injection issues
         $state.find("span").text(state.text);
         $state.find("img").attr("src", baseUrl + "/" + state.element.value.toLowerCase() + ".svg");
-      
+
         return $state;
-      };
+    };
     $(".modal-select").select2({
         dropdownParent: $("#formModal"),
     });
@@ -222,6 +222,34 @@ const previewImage = (id) => {
 // Tooltip
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+// Dark theme start
+const toggleBtn = document.getElementById("toggle-btn");
+const body = document.querySelector("body");
+toggleBtn.addEventListener("click", function () {
+    document.body.classList.toggle("dark-theme");
+    if (document.body.classList.contains("dark-theme")) {
+        localStorage.setItem("dark-theme", 1);
+    } else {
+        localStorage.setItem("dark-theme", 0);
+    }
+    setTheme();
+});
+
+function setTheme() {
+    const isDarkTheme = localStorage.getItem("dark-theme");
+    if (isDarkTheme == 1) {
+        document.querySelector('body').classList.add('dark-theme');
+        document.getElementById("moon").style.display = "none";
+        document.getElementById("sun").style.display = "block";
+    } else {
+        document.querySelector('body').classList.remove('dark-theme');
+        document.getElementById("moon").style.display = "block";
+        document.getElementById("sun").style.display = "none";
+    }
+}
+setTheme();
+// Dark theme end
 
 // Copy text start
 function copyTextFunc() {
@@ -270,3 +298,5 @@ window.intlTelInput(input, {
     separateDialCode: true,
 });
 // International Telephone Input end
+
+

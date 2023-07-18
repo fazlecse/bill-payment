@@ -61,9 +61,8 @@ Typography
     --primary-color-opacity-low: rgba(134, 90, 255, 0.1);
     --soft-red-opacity-low: rgba(216, 42, 103, 0.1);
     --bg-color1: rgba(134, 90, 255, 0.1);
-    --bg-color2: #F1F3F4;
-    --bg-color3: #152748;
-    --bg-color4: #424449;
+    --bg-color2: #ffffff;
+    --bg-color3: #ffffff;
     --body-color: #707070;
     --border-color1: #f2f2f2;
     --border-color2: #e1e1e1;
@@ -76,6 +75,21 @@ Typography
     --transition: all .3s ease-in-out;
 }
 
+// Dark theme section start
+.dark-theme {
+    --heading-color: #ffffff;
+    --bg-color1: #1E2022;
+    --bg-color2: #25282A;
+    --bg-color3: #2F3235;
+    color: #a1a1a8;
+    background-color: var(--bg-color2);
+    p{
+        color: #a1a1a8;
+    }
+
+}
+
+// Dark theme section end
 
 /*----------------------------------------------
 Reset section start
@@ -301,7 +315,7 @@ body {
 
 @media (max-width: 991px) {
     body {
-        padding-bottom: 60px;
+        padding-bottom: 50px;
     }
 
 }
@@ -326,7 +340,7 @@ textarea.form-control {
 
 .form-control,
 .form-select {
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: var(--input-color);
     height: 45px;
     border: 1px solid var(--border-color2);
@@ -819,7 +833,8 @@ Offcanvas section start
 
 .offcanvas.offcanvas-end {
     border-left: 1px solid var(--border-color3);
-    transition: all .8s ease-out .5s;
+    // transition: all .8s ease-out .5s;
+    transition: transform 0.5s ease 0.4s;
 }
 
 .offcanvas-backdrop {
@@ -828,7 +843,8 @@ Offcanvas section start
     right: 0;
     width: 0;
     left: auto;
-    transition: all 1.5s ease-in-out;
+    // transition: all 1.5s ease-in-out;
+    transition: all 0.8s ease-out;
 }
 
 .offcanvas-backdrop.show {
@@ -1093,7 +1109,7 @@ Offcanvas end
     position: relative;
     background: var(--white);
     padding: 8px 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: var(--transition);
     font-size: 16px;
     display: inline-flex;
@@ -1205,6 +1221,13 @@ Offcanvas end
     font-weight: 500;
     text-decoration: underline;
     margin-left: 10px;
+}
+
+.rtl {
+    .how-it-work-btn {
+        margin-left: 0;
+        margin-right: 10px;
+    }
 }
 
 /*----------------------------------------------
@@ -1426,7 +1449,7 @@ section {
     font-weight: 400;
     margin-bottom: 20px;
     font-family: 'Kanit', sans-serif;
-    background-color: var(--bg-color1);
+    background-color: var(--primary-color-opacity-low);
     display: inline-flex;
     padding: 3px 15px;
     line-height: normal;
@@ -1437,7 +1460,7 @@ section {
 
 @media (max-width: 991px) {
     .section-subtitle {
-        font-size: 18px;
+        font-size: 14px;
     }
 }
 
@@ -1903,7 +1926,7 @@ Padding bottom
 01. Nav section start
 ----------------------------------------------*/
 .navbar.active {
-    background-color: var(--white);
+    background-color: var(--bg-color3);
     box-shadow: var(--shadow2);
     z-index: 999;
     padding: 15px 0;
@@ -1964,10 +1987,15 @@ Padding bottom
                 color: var(--primary-color);
             }
 
-            i {
+            .login-icon {
                 margin-right: 5px;
                 color: var(--primary-color);
             }
+        }
+
+        .toggle-btn {
+            font-size: 20px;
+            cursor: pointer;
         }
     }
 
@@ -2009,14 +2037,10 @@ Padding bottom
 // Nav responsive end
 // Rtl nav start
 .rtl {
-    .navbar-nav.ms-auto {
-        margin-right: auto;
-        margin-left: 0 !important;
-    }
-
-    .navbar .navbar-nav .nav-link i {
+    .navbar .navbar-nav .nav-link .login-icon {
         margin-right: 0;
         margin-left: 5px;
+        transform: rotate(180deg);
     }
 }
 
@@ -2151,6 +2175,9 @@ Hero end
 /*----------------------------------------------
 04. Feature section start
 ----------------------------------------------*/
+.feature-section{
+    background-color: var(--bg-color2);
+}
 .cmn-box-item {
     &:nth-child(odd) {
         .cmn-box {
@@ -2287,8 +2314,31 @@ Feature end
 // About responsive end
 // Rtl about start
 .rtl {
-    .about-section .about-content .about-item {
-        text-align: right;
+    .about-section {
+        .ps-md-0 {
+            padding-left: calc(var(--bs-gutter-x) * .5) !important;
+            padding-right: 0 !important;
+        }
+
+        .about-content {
+            padding-right: 0;
+            padding-left: 30px;
+        }
+
+        .about-thumb {
+            border-radius: 50px 0 0 50px;
+
+            img {
+                border-radius: 50px 0 0 50px;
+            }
+        }
+    }
+
+    @media (max-width: 575px) {
+        .about-section .about-content {
+            padding-left: 0;
+        }
+
     }
 }
 
@@ -2301,6 +2351,7 @@ About end
 06. How it works section start
 ----------------------------------------------*/
 .how-it-work {
+    background-color: var(--bg-color2);
 
     .how-it-work-content {
         .btn-area {
@@ -2400,9 +2451,37 @@ How it works end
 // Responsive why choose us section end
 // Rtl why choose us section start
 .rtl {
-    .choose-us-list .item img {
-        margin-right: 0;
-        margin-left: 5px;
+    .why-choose-us {
+        .pe-md-0 {
+            padding-right: calc(var(--bs-gutter-x) * .5) !important;
+            padding-left: 0 !important;
+        }
+    }
+
+    .why-choose-us-content {
+        padding-left: 0;
+        padding-right: 30px;
+    }
+
+    .why-choose-us-thum {
+        border-radius: 50px 50px 0;
+
+        img {
+            border-radius: 0 50px 50px 0;
+        }
+    }
+
+    .choose-us-list {
+        .item i {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .why-choose-us .why-choose-us-content {
+            padding-right: 0;
+        }
     }
 }
 
@@ -2415,6 +2494,7 @@ Why choose us end
 08. Testimonial section start
 ----------------------------------------------*/
 .testimonial-section {
+    background-color: var(--bg-color2);
     .testimonial-box {
         padding: 20px;
         background: var(--white);
@@ -2570,19 +2650,40 @@ Testimonial end
         margin: auto;
     }
 }
+
 @media (max-width: 575px) {
-    .faq-section{
+    .faq-section {
         .faq-content {
             padding-right: 0;
         }
     }
-    
+
 }
 
 // Responsive faqs section end
 
 // Faq rtl start
 .rtl {
+    .faq-section {
+        .ps-md-0 {
+            padding-left: calc(var(--bs-gutter-x) * .5) !important;
+            padding-right: 0 !important;
+        }
+    }
+
+    .faq-content {
+        padding-right: 0;
+        padding-left: 30px;
+    }
+
+    .faq-thum {
+        border-radius: 50px 0 0 50px;
+
+        img {
+            border-radius: 50px 0 0 50px;
+        }
+    }
+
     .accordion-button {
         text-align: right;
         padding: 10px;
@@ -2592,6 +2693,13 @@ Testimonial end
             margin-left: 0;
         }
     }
+
+    @media (max-width: 575px) {
+        .faq-section .faq-content {
+            padding-left: 0;
+        }
+    }
+
 }
 
 // Faq rtl end
@@ -2602,7 +2710,9 @@ Faq end
 /*----------------------------------------------
 10. Blog section start
 ----------------------------------------------*/
-
+.blog-section{
+    background-color: var(--bg-color2);
+}
 .blog-box {
     background: var(--white);
 
@@ -2779,10 +2889,12 @@ Blog end
 .app-section {
     background-color: var(--bg-color1);
 }
-.app-btn-area{
+
+.app-btn-area {
     display: flex;
     gap: 15px;
 }
+
 .app-btn {
     position: relative;
     background-color: var(--white);
@@ -2803,22 +2915,34 @@ Blog end
 }
 
 // Responsive app section start
-@media (max-width: 991px){
-    .app-section{
+@media (max-width: 991px) {
+    .app-section {
         text-align: center;
     }
 }
-@media (max-width: 575px){
-    .app-btn-area{
+
+@media (max-width: 575px) {
+    .app-btn-area {
         flex-direction: column;
     }
 }
+
 // Responsive app section end
+// Rtl app section start
+.rtl {
+    .app-btn .icon-area {
+        margin-right: 0;
+        margin-left: 15px;
+    }
+}
+
+// Rtl app section end
 // App end
 /*----------------------------------------------
 12. Newsletter section start
 ----------------------------------------------*/
 .newsletter-section {
+    background-color: var(--bg-color2);
 
     .content-area {
         font-family: var(--heading-font);
@@ -2849,7 +2973,7 @@ Blog end
             border-radius: 9999px;
             height: 55px;
             background-color: var(--white);
-            padding: 10px 165px 10px 20px;
+            padding: 10px 155px 10px 20px;
             border-color: var(--primary-color-opacity-low);
             box-shadow: var(--shadow3);
 
@@ -2902,7 +3026,7 @@ Blog end
     .newsletter-section .newsletter-form {
         .form-control {
             height: 45px;
-            padding: 10px 125px 10px 20px;
+            padding: 10px 115px 10px 20px;
         }
 
         .subscribe-btn {
@@ -2918,7 +3042,7 @@ Blog end
 .rtl {
     .newsletter-section .newsletter-form {
         .form-control {
-            padding: 10px 20px 10px 165px;
+            padding: 10px 20px 10px 155px;
         }
 
         .subscribe-btn {
@@ -2930,7 +3054,7 @@ Blog end
     @media (max-width: 575px) {
         .newsletter-section .newsletter-form {
             .form-control {
-                padding: 10px 20px 10px 125px;
+                padding: 10px 20px 10px 115px;
             }
 
             .subscribe-btn {
@@ -3247,37 +3371,11 @@ Banner end
 
 }
 
-// Contact responsive start
-@media (max-width: 991px) {
-    .contact-section {
-        .contact-top {
-            padding: 50px 0 300px 0;
-        }
-
-        .contact-inner {
-            margin-top: -275px;
-        }
-    }
-
-}
-
-@media (max-width: 575px) {
-    .contact-section {
-        .contact-message-area {
-            padding: 0;
-            padding-top: 15px;
-        }
-    }
-
-}
-
-// Contact responsive end
-
 // Rtl contact section start 
 .rtl {
-    .contact-section .contact-top .contact-top-thum {
-        right: 90%;
-        transform: translateX(90%);
+    .contact-section .contact-area .contact-item-list .item .icon-area {
+        margin-right: 0;
+        margin-left: 15px;
     }
 }
 
@@ -3764,6 +3862,7 @@ Pagination end
     .error-section {
         height: 100%;
         width: 100%;
+        text-align: center;
     }
 }
 
