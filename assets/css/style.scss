@@ -83,9 +83,27 @@ Typography
     --bg-color3: #2F3235;
     color: #a1a1a8;
     background-color: var(--bg-color2);
-    p{
+
+    p {
         color: #a1a1a8;
     }
+
+    .form-control,
+    .form-select {
+        background-color: var(--bg-color1);
+        border-color: var(--bg-color1);
+        color: var(--white);
+    }
+
+    hr.divider:after {
+        background-color: var(--bg-color1);
+    }
+
+    .cmn-btn3 {
+        background-color: var(--bg-color2);
+        color: var(--white);
+    }
+
 
 }
 
@@ -406,8 +424,8 @@ intlTelInput section start
 }
 
 .iti__selected-flag {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .iti__country-list {
@@ -449,6 +467,18 @@ intlTelInput section start
 }
 
 // Rtl intlTelInput section end
+// Dark theme intlTelInput section start
+.dark-theme{
+    .iti__country-list{
+        background-color: var(--bg-color3);
+        border-color: var(--bg-color3);
+        color: var(--white);
+    }
+    .iti__country.iti__highlight{
+        background-color: var(--primary-color);
+    }
+}
+// Dark theme intlTelInput section end
 /*----------------------------------------------
 intlTelInput end
 ----------------------------------------------*/
@@ -822,6 +852,14 @@ Reuseble style section start
 }
 
 // Rtl search box section end
+// Dark theme search box section start 
+.dark-theme {
+    .search-box .form-control {
+        background-color: var(--bg-color2);
+    }
+}
+
+// Dark theme search box section emd
 // Search box section end
 
 /*----------------------------------------------
@@ -854,6 +892,14 @@ Offcanvas section start
 
 }
 
+// Dark offcanvas section start
+.dark-theme {
+    .offcanvas.offcanvas-end {
+        background-color: var(--bg-color3);
+    }
+}
+
+// Dark offcanvas section end
 /*----------------------------------------------
 Offcanvas end 
 ----------------------------------------------*/
@@ -1107,7 +1153,6 @@ Offcanvas end
 
 .cmn-btn3 {
     position: relative;
-    background: var(--white);
     padding: 8px 20px;
     border-radius: 5px;
     transition: var(--transition);
@@ -1464,6 +1509,7 @@ section {
     }
 }
 
+// Social icon section start
 .social-area ul li a {
     width: 35px;
     height: 35px;
@@ -1481,6 +1527,20 @@ section {
         color: var(--white);
     }
 }
+
+// Dark theme social icon section start
+.dark-theme {
+    .social-area ul li a {
+        background-color: var(--bg-color2);
+
+        &:hover {
+            background-color: var(--primary-color);
+        }
+    }
+}
+
+// Dark theme social icon section end
+// Social icon section end
 
 
 
@@ -2091,6 +2151,16 @@ Nav end
     }
 }
 
+// Dark theme bottom nav start
+.dark-theme {
+    .bottom-nav {
+        background-color: var(--bg-color3);
+    }
+
+}
+
+// Dark theme bottom nav end
+
 /*----------------------------------------------
 Bottom Mobile, Tab nav end
 ----------------------------------------------*/
@@ -2175,9 +2245,10 @@ Hero end
 /*----------------------------------------------
 04. Feature section start
 ----------------------------------------------*/
-.feature-section{
+.feature-section {
     background-color: var(--bg-color2);
 }
+
 .cmn-box-item {
     &:nth-child(odd) {
         .cmn-box {
@@ -2264,6 +2335,16 @@ Hero end
 }
 
 // Feature rtl end
+// Dark theme feature section start
+.dark-theme {
+    .cmn-box-item:nth-child(odd) .cmn-box .icon-box {
+        background-color: var(--bg-color2);
+        box-shadow: none;
+    }
+
+}
+
+// Dark theme feature section end
 /*----------------------------------------------
 Feature end
 ----------------------------------------------*/
@@ -2495,6 +2576,7 @@ Why choose us end
 ----------------------------------------------*/
 .testimonial-section {
     background-color: var(--bg-color2);
+
     .testimonial-box {
         padding: 20px;
         background: var(--white);
@@ -2552,7 +2634,17 @@ Why choose us end
 }
 
 // Rtl testimonial section start 
+// Dark theme testimonial section start
+.dark-theme {
+    .testimonial-section {
+        .testimonial-box {
+            background-color: var(--bg-color1);
+            border-color: var(--bg-color1);
+        }
+    }
+}
 
+// Dark theme testimonial section start
 /*----------------------------------------------
 Testimonial end
 ----------------------------------------------*/
@@ -2710,9 +2802,10 @@ Faq end
 /*----------------------------------------------
 10. Blog section start
 ----------------------------------------------*/
-.blog-section{
+.blog-section {
     background-color: var(--bg-color2);
 }
+
 .blog-box {
     background: var(--white);
 
@@ -2879,6 +2972,18 @@ Faq end
 }
 
 // Blog responsive end
+// Dark theme blog section start
+.dark-theme {
+    .blog-box {
+        background-color: var(--bg-color2);
+
+        .content-box {
+            background-color: var(--bg-color1);
+        }
+    }
+}
+
+// Dark theme blog section end
 /*----------------------------------------------
 Blog end
 ----------------------------------------------*/
@@ -2937,6 +3042,14 @@ Blog end
 }
 
 // Rtl app section end
+// Dark theme app section start
+.dark-theme {
+    .app-btn {
+        background-color: var(--bg-color2);
+    }
+}
+
+// Dark theme app section end
 // App end
 /*----------------------------------------------
 12. Newsletter section start
@@ -3065,6 +3178,15 @@ Blog end
 }
 
 // Rtl newsletter section end
+// Dark theme newsletter section start
+.dark-theme {
+    .newsletter-section .newsletter-form .form-control {
+        background-color: var(--bg-color1);
+        box-shadow: none;
+    }
+}
+
+// Dark theme newsletter section end
 /*----------------------------------------------
 Newsletter end
 ----------------------------------------------*/
@@ -3313,7 +3435,17 @@ Copyright end
 }
 
 // Responsive banner section end
+// Dark theme banner section start
+.dark-theme {
+    .banner-area {
+        background: linear-gradient(rgba(20, 19, 19, 0.85), rgba(83, 73, 73, 0.7)), url(../img/banner/banner-bg.jpg);
+        background-size: cover;
+        background-position: 100% 75%;
+    }
+}
 
+
+// Dark theme banner section end
 /*----------------------------------------------
 Banner end
 ----------------------------------------------*/
@@ -3497,7 +3629,18 @@ Contact end
 }
 
 // Rtl login signup page end
+// Dark theme login-signup section start
+.dark-theme {
+    .login-signup-page .login-signup-form {
+        background-color: var(--bg-color1);
 
+        .form-control {
+            background-color: var(--bg-color2);
+        }
+    }
+}
+
+// Dark theme login-signup section end
 /*----------------------------------------------
 Login Signup end
 ----------------------------------------------*/
@@ -3731,7 +3874,22 @@ Login Signup end
 }
 
 // Blog details rtl end
+// Dark theme blog details section start
+.dark-theme {
+    .blog-sidebar {
+        .tag-list {
+            .item {
+                background-color: var(--bg-color2);
 
+                &:hover {
+                    background-color: var(--primary-color);
+                }
+            }
+        }
+    }
+}
+
+// Dark theme blog details section end
 /*----------------------------------------------
 Blog details end
 ----------------------------------------------*/
@@ -3743,39 +3901,36 @@ Blog details end
     margin-top: 50px;
     display: flex;
     justify-content: end;
+}
 
-    nav {
-        .pagination {
-            .page-item {
-                .page-link {
-                    margin: 5px;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 8px !important;
-                    color: var(--heading-color);
-                    background-color: var(--white);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border: 1px solid var(--border-color2);
-                    box-shadow: none;
+.pagination {
+    .page-item {
+        .page-link {
+            margin: 5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px !important;
+            color: var(--heading-color);
+            background-color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border-color2);
+            box-shadow: none;
 
-                    &:hover,
-                    &:focus {
-                        background-color: var(--primary-color);
-                        color: var(--white);
-                        border: 1px solid var(--primary-color);
-                    }
-                }
-
-                &.active .page-link {
-                    background-color: var(--primary-color);
-                    color: var(--white);
-                    border-color: var(--primary-color);
-                }
+            &:hover,
+            &:focus {
+                background-color: var(--primary-color);
+                color: var(--white);
+                border: 1px solid var(--primary-color);
             }
         }
 
+        &.active .page-link {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
     }
 }
 
@@ -3784,6 +3939,23 @@ Blog details end
     transform: rotate(180deg);
 }
 
+// Dark theme pagination section start
+.dark-theme {
+    .pagination .page-item .page-link {
+        background-color: var(--bg-color1);
+        border-color: var(--bg-color1);
+
+        &:hover {
+            background-color: var(--primary-color);
+        }
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: var(--primary-color);
+    }
+}
+
+// Dark theme pagination section end
 // Pagination rtl end
 
 /*----------------------------------------------

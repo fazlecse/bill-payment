@@ -78,6 +78,19 @@ Typography
 .dark-theme p {
   color: #a1a1a8;
 }
+.dark-theme .form-control,
+.dark-theme .form-select {
+  background-color: var(--bg-color1);
+  border-color: var(--bg-color1);
+  color: var(--white);
+}
+.dark-theme hr.divider:after {
+  background-color: var(--bg-color1);
+}
+.dark-theme .cmn-btn3 {
+  background-color: var(--bg-color2);
+  color: var(--white);
+}
 
 /*----------------------------------------------
 Reset section start
@@ -360,8 +373,8 @@ intlTelInput section start
 }
 
 .iti__selected-flag {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .iti__country-list {
@@ -393,6 +406,15 @@ intlTelInput section start
 .rtl .iti--separate-dial-code input[type=text] {
   padding-left: 6px !important;
   padding-right: 96px;
+}
+
+.dark-theme .iti__country-list {
+  background-color: var(--bg-color3);
+  border-color: var(--bg-color3);
+  color: var(--white);
+}
+.dark-theme .iti__country.iti__highlight {
+  background-color: var(--primary-color);
 }
 
 /*----------------------------------------------
@@ -724,6 +746,10 @@ Reuseble style section start
   padding-left: 50px;
 }
 
+.dark-theme .search-box .form-control {
+  background-color: var(--bg-color2);
+}
+
 /*----------------------------------------------
 Offcanvas section start 
 ----------------------------------------------*/
@@ -749,6 +775,10 @@ Offcanvas section start
 .offcanvas-backdrop.show {
   opacity: 1;
   width: 100%;
+}
+
+.dark-theme .offcanvas.offcanvas-end {
+  background-color: var(--bg-color3);
 }
 
 /*----------------------------------------------
@@ -972,7 +1002,6 @@ Offcanvas end
 
 .cmn-btn3 {
   position: relative;
-  background: var(--white);
   padding: 8px 20px;
   border-radius: 5px;
   transition: var(--transition);
@@ -1291,6 +1320,13 @@ section {
 .social-area ul li a:hover {
   background-color: var(--primary-color);
   color: var(--white);
+}
+
+.dark-theme .social-area ul li a {
+  background-color: var(--bg-color2);
+}
+.dark-theme .social-area ul li a:hover {
+  background-color: var(--primary-color);
 }
 
 .star ul li i {
@@ -1835,6 +1871,10 @@ Nav end
   font-size: 20px;
 }
 
+.dark-theme .bottom-nav {
+  background-color: var(--bg-color3);
+}
+
 /*----------------------------------------------
 Bottom Mobile, Tab nav end
 ----------------------------------------------*/
@@ -1967,6 +2007,11 @@ Hero end
   .rtl .feature-box.ms-lg-4 {
     margin-right: 0;
   }
+}
+
+.dark-theme .cmn-box-item:nth-child(odd) .cmn-box .icon-box {
+  background-color: var(--bg-color2);
+  box-shadow: none;
 }
 
 /*----------------------------------------------
@@ -2172,6 +2217,11 @@ Why choose us end
 .rtl .testimonial-section .testimonial-box .testimonial-header .testimonial-thumbs {
   margin-right: 0;
   margin-left: 10px;
+}
+
+.dark-theme .testimonial-section .testimonial-box {
+  background-color: var(--bg-color1);
+  border-color: var(--bg-color1);
 }
 
 /*----------------------------------------------
@@ -2416,6 +2466,13 @@ Faq end
   transform: rotate(180deg);
 }
 
+.dark-theme .blog-box {
+  background-color: var(--bg-color2);
+}
+.dark-theme .blog-box .content-box {
+  background-color: var(--bg-color1);
+}
+
 /*----------------------------------------------
 Blog end
 ----------------------------------------------*/
@@ -2461,6 +2518,10 @@ Blog end
 .rtl .app-btn .icon-area {
   margin-right: 0;
   margin-left: 15px;
+}
+
+.dark-theme .app-btn {
+  background-color: var(--bg-color2);
 }
 
 /*----------------------------------------------
@@ -2557,6 +2618,11 @@ Blog end
   .rtl .newsletter-section .newsletter-form .subscribe-btn {
     left: 3px;
   }
+}
+
+.dark-theme .newsletter-section .newsletter-form .form-control {
+  background-color: var(--bg-color1);
+  box-shadow: none;
 }
 
 /*----------------------------------------------
@@ -2749,6 +2815,12 @@ Copyright end
     font-size: 36px;
   }
 }
+.dark-theme .banner-area {
+  background: linear-gradient(rgba(20, 19, 19, 0.85), rgba(83, 73, 73, 0.7)), url(../img/banner/banner-bg.jpg);
+  background-size: cover;
+  background-position: 100% 75%;
+}
+
 /*----------------------------------------------
 Banner end
 ----------------------------------------------*/
@@ -2875,6 +2947,13 @@ Contact end
 .rtl .password-box .password-icon {
   right: auto;
   left: 15px;
+}
+
+.dark-theme .login-signup-page .login-signup-form {
+  background-color: var(--bg-color1);
+}
+.dark-theme .login-signup-page .login-signup-form .form-control {
+  background-color: var(--bg-color2);
 }
 
 /*----------------------------------------------
@@ -3044,6 +3123,13 @@ Login Signup end
   left: auto;
 }
 
+.dark-theme .blog-sidebar .tag-list .item {
+  background-color: var(--bg-color2);
+}
+.dark-theme .blog-sidebar .tag-list .item:hover {
+  background-color: var(--primary-color);
+}
+
 /*----------------------------------------------
 Blog details end
 ----------------------------------------------*/
@@ -3055,7 +3141,8 @@ Blog details end
   display: flex;
   justify-content: end;
 }
-.pagination-section nav .pagination .page-item .page-link {
+
+.pagination .page-item .page-link {
   margin: 5px;
   width: 40px;
   height: 40px;
@@ -3068,12 +3155,12 @@ Blog details end
   border: 1px solid var(--border-color2);
   box-shadow: none;
 }
-.pagination-section nav .pagination .page-item .page-link:hover, .pagination-section nav .pagination .page-item .page-link:focus {
+.pagination .page-item .page-link:hover, .pagination .page-item .page-link:focus {
   background-color: var(--primary-color);
   color: var(--white);
   border: 1px solid var(--primary-color);
 }
-.pagination-section nav .pagination .page-item.active .page-link {
+.pagination .page-item.active .page-link {
   background-color: var(--primary-color);
   color: var(--white);
   border-color: var(--primary-color);
@@ -3081,6 +3168,17 @@ Blog details end
 
 .rtl .pagination-section nav .pagination .page-item .page-link i {
   transform: rotate(180deg);
+}
+
+.dark-theme .pagination .page-item .page-link {
+  background-color: var(--bg-color1);
+  border-color: var(--bg-color1);
+}
+.dark-theme .pagination .page-item .page-link:hover {
+  background-color: var(--primary-color);
+}
+.dark-theme .pagination .page-item.active .page-link {
+  background-color: var(--primary-color);
 }
 
 /*----------------------------------------------
