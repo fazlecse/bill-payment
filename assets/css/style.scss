@@ -468,16 +468,18 @@ intlTelInput section start
 
 // Rtl intlTelInput section end
 // Dark theme intlTelInput section start
-.dark-theme{
-    .iti__country-list{
+.dark-theme {
+    .iti__country-list {
         background-color: var(--bg-color3);
         border-color: var(--bg-color3);
         color: var(--white);
     }
-    .iti__country.iti__highlight{
+
+    .iti__country.iti__highlight {
         background-color: var(--primary-color);
     }
 }
+
 // Dark theme intlTelInput section end
 /*----------------------------------------------
 intlTelInput end
