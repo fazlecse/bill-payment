@@ -43,7 +43,6 @@ Typography
   --soft-blue: #C1BFFD;
   --grayish-violet: #f5f4f7;
   --btn-bg1: #875AFF;
-  --btn-bg2: #875AFF;
   --btn-after-bg: #7441ff;
   --soft-green: #ccf888;
   --soft-red: #FE5758;
@@ -122,97 +121,86 @@ preloader section start
   align-items: center;
   justify-content: center;
 }
-#preloader .loader {
-  position: relative;
-  width: 100%;
+
+/* phone */
+.phone {
+  --screen-clr: #0d85aa;
+  --border-clr: #29536d;
+  --loader-clr: #CCE3DE;
+  background-color: var(--screen-clr);
+  height: 13rem;
+  aspect-ratio: 10/16;
+  border-radius: 0.5rem;
+  border: 5px solid var(--border-clr);
+  border-top: 10px solid var(--border-clr);
+  border-bottom: 10px solid var(--border-clr);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-}
-#preloader .loader .ring {
+  justify-content: center;
+  gap: 1rem;
+  animation: shake 0.5s infinite linear;
   position: relative;
-  width: 150px;
-  height: 150px;
-  margin: -30px;
-  border: 4px solid transparent;
-  border-radius: 50%;
-  border-top: 4px solid #24ecff;
-  animation: animate 4s linear infinite;
-}
-#preloader .loader .ring::before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  background: #24ecff;
-  box-shadow: 0 0 0 5px rgba(36, 236, 255, 0.2), 0 0 0 10px rgba(36, 236, 255, 0.1333333333), 0 0 0 20px rgba(36, 236, 255, 0.0666666667), 0 0 20px #24ecff, 0 0 50px #24ecff;
-}
-#preloader .loader .ring:nth-child(2) {
-  animation: animate2 4s linear infinite;
-  animation-delay: -1s;
-  border-left: 4px solid #93ff2d;
-  border-top: 4px solid transparent;
-}
-#preloader .loader .ring:nth-child(2)::before {
-  content: "";
-  position: absolute;
-  top: initial;
-  bottom: 12px;
-  left: 12px;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  background: #93ff2d;
-  box-shadow: 0 0 0 5px rgba(147, 255, 45, 0.2), 0 0 0 10px rgba(147, 255, 45, 0.1333333333), 0 0 0 20px rgba(147, 255, 45, 0.0666666667), 0 0 20px #93ff2d, 0 0 50px #93ff2d;
-}
-#preloader .loader .ring:nth-child(3) {
-  animation: animate2 4s linear infinite;
-  animation-delay: -3s;
-  position: absolute;
-  top: -66.66px;
-  border-top: 4px solid transparent;
-  border-left: 4px solid #e41cf8;
-}
-#preloader .loader .ring:nth-child(3)::before {
-  content: "";
-  position: absolute;
-  top: initial;
-  bottom: 12px;
-  left: 12px;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  background: #e41cf8;
-  box-shadow: 0 0 0 5px rgba(228, 28, 248, 0.2), 0 0 0 10px rgba(228, 28, 248, 0.1333333333), 0 0 0 20px rgba(228, 28, 248, 0.0666666667), 0 0 20px #e41cf8, 0 0 50px #e41cf8;
-}
-#preloader .loader p {
-  position: absolute;
-  color: #fff;
-  font-size: 1.5em;
-  font-family: consolas;
-  bottom: -120px;
-  letter-spacing: 0.15em;
-}
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes animate2 {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }
 
+/* camera */
+.phone::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1rem;
+  height: 5px;
+  background-color: var(--loader-clr);
+  border-radius: 0.5rem;
+}
+
+/* loader */
+.loader {
+  border: 10px dashed var(--loader-clr);
+  width: 2rem;
+  height: 2rem;
+  padding: 1.7rem;
+  border-radius: 50%;
+  animation: loading 2s infinite ease-in-out;
+}
+
+/* loading text */
+.text {
+  color: var(--loader-clr);
+}
+
+/* loader spinning */
+@keyframes loading {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+/* phone shaking */
+@keyframes shake {
+  0% {
+    rotate: 0deg;
+  }
+  10% {
+    rotate: 0.5deg;
+  }
+  20% {
+    rotate: 0deg;
+  }
+  30% {
+    rotate: -0.5deg;
+  }
+  50% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
 /*----------------------------------------------
 preloader end
 ----------------------------------------------*/
@@ -750,6 +738,19 @@ Reuseble style section start
   background-color: var(--bg-color2);
 }
 
+.cmn-btn-close {
+  font-size: 18px;
+  background: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 62% 38% 46% 54%/60% 63% 37% 40%;
+  color: var(--white);
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  box-shadow: none;
+}
+
 /*----------------------------------------------
 Offcanvas section start 
 ----------------------------------------------*/
@@ -962,7 +963,8 @@ Offcanvas end
 }
 .cmn-btn:hover {
   color: var(--white);
-  background-color: var(--btn-bg2);
+  background-color: var(--btn-after-bg);
+  border-color: var(--btn-after-bg);
 }
 .cmn-btn:hover::after {
   height: 100%;
@@ -1015,7 +1017,8 @@ Offcanvas end
 }
 .cmn-btn3:hover {
   color: var(--white);
-  background: var(--primary-color);
+  background: var(--btn-after-bg);
+  border-color: var(--btn-after-bg);
 }
 .cmn-btn3:hover::after {
   height: 100%;
@@ -1075,9 +1078,9 @@ Offcanvas end
   z-index: 1;
 }
 .get-start-btn:hover {
-  background-color: var(--btn-bg2);
+  background-color: var(--btn-after-bg);
   color: var(--white);
-  border: 1px solid var(--btn-bg2);
+  border: 1px solid var(--btn-after-bg);
 }
 .get-start-btn:hover::after {
   height: 100%;
@@ -2576,7 +2579,7 @@ Blog end
   align-items: center;
 }
 .newsletter-section .newsletter-form .subscribe-btn:hover {
-  background-color: var(--btn-bg2);
+  background-color: var(--btn-bg1);
   color: var(--white);
 }
 
