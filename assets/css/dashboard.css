@@ -313,7 +313,7 @@ textarea.form-control {
   border-radius: 5px;
   background-color: var(--bg-color1);
   border: 1px solid var(--primary-color-opacity-low);
-  height: 40px;
+  height: 45px;
 }
 
 .form-control:disabled {
@@ -383,6 +383,61 @@ textarea.form-control {
   opacity: 0;
 }
 
+/*----------------------------------------------
+intlTelInput section start
+----------------------------------------------*/
+.iti {
+  display: flex;
+}
+
+.iti__selected-flag {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.iti__country-list {
+  box-shadow: var(--shadow1);
+  border: 1px solid var(--border-color2);
+  border-radius: 5px;
+}
+
+.iti-mobile .iti__country-list {
+  z-index: 9999;
+}
+
+.rtl .iti--allow-dropdown .iti__flag-container,
+.rtl .iti--separate-dial-code .iti__flag-container {
+  right: 0;
+  left: auto;
+}
+.rtl .iti__selected-flag {
+  border-top-left-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 10px;
+}
+.rtl .iti--allow-dropdown input,
+.rtl .iti--allow-dropdown input[type=tel],
+.rtl .iti--allow-dropdown input[type=text],
+.rtl .iti--separate-dial-code input,
+.rtl .iti--separate-dial-code input[type=tel],
+.rtl .iti--separate-dial-code input[type=text] {
+  padding-left: 6px !important;
+  padding-right: 96px;
+}
+
+.dark-theme .iti__country-list {
+  background-color: var(--bg-color3);
+  border-color: var(--bg-color3);
+  color: var(--white);
+}
+.dark-theme .iti__country.iti__highlight {
+  background-color: var(--primary-color);
+}
+
+/*----------------------------------------------
+intlTelInput end
+----------------------------------------------*/
 .select2 {
   width: 100% !important;
 }
@@ -2232,6 +2287,9 @@ Sidebar start
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+.card .card-body {
+  padding: 20px;
+}
 
 /*----------------------------------------------
     Card section end
@@ -2622,8 +2680,18 @@ Paybill section start
   background-color: var(--primary-color);
   color: var(--bg-color3);
 }
-.paybill-form .paybill-form-btn-area {
+
+.paybill-form-btn-area {
   margin-top: 30px;
+}
+
+.paybill-confirm-list .item {
+  padding: 10px;
+  border: 1px solid var(--border-color1);
+  display: flex;
+  justify-content: space-between;
+  margin-top: -1px;
+  border-radius: 5px;
 }
 
 /*----------------------------------------------

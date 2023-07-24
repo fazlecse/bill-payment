@@ -381,66 +381,57 @@
     <main id="main" class="main bg-color2">
         <div class="section dashboard">
             <div class="pagetitle">
-                <h3>Pay Bill</h3>
+                <h3>Lets Payment</h3>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class=" col-xxl-6 col-lg-8 mx-auto">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4>Pay Bill</h4>
+                        <h4>Preview Bill Payment</h4>
                     </div>
                     <div class="card-body">
 
-                        <form class="paybill-form">
-
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <label for="From-Wallet" class="form-label">From Wallet</label>
-                                    <select class="form-select" id="From-Wallet">
-                                        <option selected>Select wallet</option>
-                                        <option value="1"> USD - US Doller </option>
-                                        <option value="2"> GBP - British pound </option>
-                                        <option value="3"> BTC - BITCOIN </option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="Country" class="form-label">Country & Phone</label>
-                                    <input id="telephone" type="text" class="form-control" name="phone"
-                                        placeholder="Your phone number"
-                                        onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="Services" class="form-label">Services</label>
-                                    <select class="form-select" id="Services">
-                                        <option selected>Select Service</option>
-                                        <option value="1">TIGO VTU</option>
-
-                                    </select>
-                                </div>
-                                <!-- <div class="col-md-6">
-                                    <label for="Mobile-number" class="form-label">Mobile Number</label>
-                                    <div class="input-group">
-                                        <input class="form-control" type="text" id="Mobile-number"
-                                            placeholder="Enter Mobile Number"
-                                            onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')">
-                                    </div>
-                                </div> -->
-                                <div class="col-md-6">
-                                    <label for="Amount" class="form-label">Amount</label>
-                                    <div class="input-group">
-                                        <input class="form-control" type="text" id="Amount" placeholder="Enter Amount"
-                                            onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')">
-                                        <span class="input-group-text" id="basic-addon2">NGN</span>
-                                    </div>
-
-
+                        <form class="paybill-confirm-form">
+                            <ul class="paybill-confirm-list">
+                                <li class="item">
+                                    <h6>Category</h6><span>Airtime</span>
+                                </li>
+                                <li class="item">
+                                    <h6>Service</h6><span>TIGO VTU</span>
+                                </li>
+                                <li class="item">
+                                    <h6>Country Code</h6><span>GH</span>
+                                </li>
+                                <li class="item">
+                                    <h6>From Wallet</h6><span>USD - US Doller</span>
+                                </li>
+                                <li class="item">
+                                    <h6>Exchange Rate</h6><span>1 USD = 5.3 GHS</span>
+                                </li>
+                                <li class="item">
+                                    <h6>Amount</h6><span>45475 GHS</span>
+                                </li>
+                                <li class="item">
+                                    <h6>Charge</h6><span>0 GHS</span>
+                                </li>
+                                <li class="item">
+                                    <h6>Payable Amount</h6><span>8580.19 USD</span>
+                                </li>
+                                <li class="item">
+                                    <h6>Category</h6><span>Airtime</span>
+                                </li>
+                            </ul>
+                            <div class="col-12 pt-4">
+                                <label for="Security-Pin" class="form-label">Security Pin</label>
+                                <div class="input-group">
+                                    <input class="form-control" type="password" id="Security-Pin"
+                                        placeholder="Please enter your security Pin">
                                 </div>
                             </div>
                             <div class="paybill-form-btn-area">
-                                <a href="user-panel-paybill-confirm.html" type="button"
-                                    class="cmn-btn w-100">continue</a>
+                                <a href="#" type="button" class="cmn-btn w-100">pay</a>
                             </div>
 
                         </form>

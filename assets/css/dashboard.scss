@@ -364,7 +364,7 @@ textarea.form-control {
     border-radius: 5px;
     background-color: var(--bg-color1);
     border: 1px solid var(--primary-color-opacity-low);
-    height: 40px;
+    height: 45px;
 }
 
 .form-control:disabled {
@@ -442,6 +442,74 @@ textarea.form-control {
 }
 
 // Cmn file input end
+/*----------------------------------------------
+intlTelInput section start
+----------------------------------------------*/
+.iti {
+    display: flex;
+}
+
+.iti__selected-flag {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.iti__country-list {
+    box-shadow: var(--shadow1);
+    border: 1px solid var(--border-color2);
+    border-radius: 5px;
+}
+
+.iti-mobile .iti__country-list {
+    z-index: 9999;
+}
+
+// Rtl intlTelInput section start
+.rtl {
+
+    .iti--allow-dropdown .iti__flag-container,
+    .iti--separate-dial-code .iti__flag-container {
+        right: 0;
+        left: auto;
+
+    }
+
+    .iti__selected-flag {
+        border-top-left-radius: 0;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 10px;
+    }
+
+    .iti--allow-dropdown input,
+    .iti--allow-dropdown input[type=tel],
+    .iti--allow-dropdown input[type=text],
+    .iti--separate-dial-code input,
+    .iti--separate-dial-code input[type=tel],
+    .iti--separate-dial-code input[type=text] {
+        padding-left: 6px !important;
+        padding-right: 96px;
+    }
+}
+
+// Rtl intlTelInput section end
+// Dark theme intlTelInput section start
+.dark-theme {
+    .iti__country-list {
+        background-color: var(--bg-color3);
+        border-color: var(--bg-color3);
+        color: var(--white);
+    }
+
+    .iti__country.iti__highlight {
+        background-color: var(--primary-color);
+    }
+}
+
+// Dark theme intlTelInput section end
+/*----------------------------------------------
+intlTelInput end
+----------------------------------------------*/
 
 // --------------------------------------------------------
 // Select2 start
@@ -2644,6 +2712,10 @@ Sidebar start
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
+
+    .card-body {
+        padding: 20px;
+    }
 }
 
 /*----------------------------------------------
@@ -3165,17 +3237,32 @@ Paybill section start
 
 // paybill category section end
 // paybill form section start
-.paybill-form{
-    .input-group-text{
+.paybill-form {
+    .input-group-text {
         border: 1px solid var(--border-color1);
         background-color: var(--primary-color);
         color: var(--bg-color3);
     }
-    .paybill-form-btn-area{
-        margin-top: 30px; 
+}
+
+.paybill-form-btn-area {
+    margin-top: 30px;
+}
+
+// paybill form section end
+// Paybill form confirm sectio start
+.paybill-confirm-list {
+    .item {
+        padding: 10px;
+        border: 1px solid var(--border-color1);
+        display: flex;
+        justify-content: space-between;
+        margin-top: -1px;
+        border-radius: 5px;
     }
 }
-// paybill form section end
+
+// Paybill form confirm sectio end
 /*----------------------------------------------
 Paybill section end
 ----------------------------------------------*/

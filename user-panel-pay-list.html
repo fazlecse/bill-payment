@@ -20,8 +20,6 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <!-- select2 Css link -->
     <link rel="stylesheet" href="assets/css/select2.min.css">
-    <!-- intlTelInput -Css link -->
-    <link rel="stylesheet" href="assets/css/intlTelInput.min.css">
 
 
 
@@ -377,85 +375,252 @@
     <!-- Sidebar section end -->
 
 
-    <!--Main section start -->
+
     <main id="main" class="main bg-color2">
         <div class="section dashboard">
             <div class="pagetitle">
-                <h3>Pay Bill</h3>
+                <h3>Pay List</h3>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <h4>Pay Bill</h4>
-                    </div>
-                    <div class="card-body">
+        <!-- Cmn table section start -->
+        <div class="card">
+            <div class="card-header d-flex justify-content-between border-0">
+                <h4>Pay Bill List</h4>
+                <div class="btn-area">
+                    <button type="button" class="cmn-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                        aria-controls="offcanvasExample">Filter<i class="fa-regular fa-filter"></i></button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="cmn-table">
+                    <div class="table-responsive overflow-hidden">
+                        <table class="table align-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Transaction ID</th>
+                                    <th scope="col">Gateway</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Charge</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Time & Date</th>
+                                    <th scope="col">action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Transaction ID"><span>#12415346563475</span></td>
+                                    <td data-label="Gateway">
+                                        <span>Bank Transfer</span>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <span>10 USD</span>
+                                    </td>
+                                    <td data-label="Charge">
+                                        <span>5 USD</span>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="badge text-bg-primary">Primary</span>
+                                    </td>
+                                    <td data-label="Time">
+                                        <span>12 Apr 2023 04:40 PM</span>
+                                    </td>
+                                    <td data-label="Action">
+                                        <div class="dropdown">
+                                            <button class="" type="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <i class="fa-regular fa-ellipsis-stroke-vertical"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">save</a></li>
+                                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#apply-modal">apply</a></li>
+                                                <li><a class="dropdown-item" href="#">copy link</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">report</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Transaction ID"><span>#12415346563475</span></td>
+                                    <td data-label="Gateway">
+                                        <span>Bank Transfer</span>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <span>10 USD</span>
+                                    </td>
+                                    <td data-label="Charge">
+                                        <span>5 USD</span>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="badge text-bg-secondary">Primary</span>
+                                    </td>
+                                    <td data-label="Time">
+                                        <span>12 Apr 2023 04:40 PM</span>
+                                    </td>
+                                    <td data-label="Action">
+                                        <div class="dropdown">
+                                            <button class="" type="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <i class="fa-regular fa-ellipsis-stroke-vertical"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">save</a></li>
+                                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#apply-modal">apply</a></li>
+                                                <li><a class="dropdown-item" href="#">copy link</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">report</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Transaction ID"><span>#12415346563475</span></td>
+                                    <td data-label="Gateway">
+                                        <span>Bank Transfer</span>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <span>10 USD</span>
+                                    </td>
+                                    <td data-label="Charge">
+                                        <span>5 USD</span>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="badge text-bg-success">Primary</span>
+                                    </td>
+                                    <td data-label="Time">
+                                        <span>12 Apr 2023 04:40 PM</span>
+                                    </td>
+                                    <td data-label="Action">
+                                        <div class="dropdown">
+                                            <button class="" type="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <i class="fa-regular fa-ellipsis-stroke-vertical"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">save</a></li>
+                                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#apply-modal">apply</a></li>
+                                                <li><a class="dropdown-item" href="#">copy link</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">report</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Transaction ID"><span>#12415346563475</span></td>
+                                    <td data-label="Gateway">
+                                        <span>Bank Transfer</span>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <span>10 USD</span>
+                                    </td>
+                                    <td data-label="Charge">
+                                        <span>5 USD</span>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="badge text-bg-danger">Primary</span>
+                                    </td>
+                                    <td data-label="Time">
+                                        <span>12 Apr 2023 04:40 PM</span>
+                                    </td>
+                                    <td data-label="Action">
+                                        <div class="dropdown">
+                                            <button class="" type="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <i class="fa-regular fa-ellipsis-stroke-vertical"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">save</a></li>
+                                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#apply-modal">apply</a></li>
+                                                <li><a class="dropdown-item" href="#">copy link</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">report</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Transaction ID"><span>#12415346563475</span></td>
+                                    <td data-label="Gateway">
+                                        <span>Bank Transfer</span>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <span>10 USD</span>
+                                    </td>
+                                    <td data-label="Charge">
+                                        <span>5 USD</span>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="badge text-bg-warning">Primary</span>
+                                    </td>
+                                    <td data-label="Time">
+                                        <span>12 Apr 2023 04:40 PM</span>
+                                    </td>
+                                    <td data-label="Action"><button type="button" class="action-btn"><i
+                                                class="fa-regular fa-pen-to-square"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Transaction ID"><span>#12415346563475</span></td>
+                                    <td data-label="Gateway">
+                                        <span>Bank Transfer</span>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <span>10 USD</span>
+                                    </td>
+                                    <td data-label="Charge">
+                                        <span>5 USD</span>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="badge text-bg-info">Primary</span>
+                                    </td>
+                                    <td data-label="Time">
+                                        <span>12 Apr 2023 04:40 PM</span>
+                                    </td>
+                                    <td data-label="Action"><button type="button" class="action-btn"><i
+                                                class="fa-regular fa-pen-to-square"></i></button></td>
+                                </tr>
 
-                        <form class="paybill-form">
+                                <tr>
+                                    <td data-label="Transaction ID"><span>#12415346563475</span></td>
+                                    <td data-label="Gateway">
+                                        <span>Bank Transfer</span>
+                                    </td>
+                                    <td data-label="Amount">
+                                        <span>10 USD</span>
+                                    </td>
+                                    <td data-label="Charge">
+                                        <span>5 USD</span>
+                                    </td>
+                                    <td data-label="Status">
+                                        <span class="badge text-bg-dark">Primary</span>
+                                    </td>
+                                    <td data-label="Time">
+                                        <span>12 Apr 2023 04:40 PM</span>
+                                    </td>
+                                    <td data-label="Action"><button type="button" class="action-btn"><i
+                                                class="fa-regular fa-pen-to-square"></i></button></td>
+                                </tr>
 
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <label for="From-Wallet" class="form-label">From Wallet</label>
-                                    <select class="form-select" id="From-Wallet">
-                                        <option selected>Select wallet</option>
-                                        <option value="1"> USD - US Doller </option>
-                                        <option value="2"> GBP - British pound </option>
-                                        <option value="3"> BTC - BITCOIN </option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="Country" class="form-label">Country & Phone</label>
-                                    <input id="telephone" type="text" class="form-control" name="phone"
-                                        placeholder="Your phone number"
-                                        onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="Services" class="form-label">Services</label>
-                                    <select class="form-select" id="Services">
-                                        <option selected>Select Service</option>
-                                        <option value="1">TIGO VTU</option>
-
-                                    </select>
-                                </div>
-                                <!-- <div class="col-md-6">
-                                    <label for="Mobile-number" class="form-label">Mobile Number</label>
-                                    <div class="input-group">
-                                        <input class="form-control" type="text" id="Mobile-number"
-                                            placeholder="Enter Mobile Number"
-                                            onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')">
-                                    </div>
-                                </div> -->
-                                <div class="col-md-6">
-                                    <label for="Amount" class="form-label">Amount</label>
-                                    <div class="input-group">
-                                        <input class="form-control" type="text" id="Amount" placeholder="Enter Amount"
-                                            onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')">
-                                        <span class="input-group-text" id="basic-addon2">NGN</span>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <div class="paybill-form-btn-area">
-                                <a href="user-panel-paybill-confirm.html" type="button"
-                                    class="cmn-btn w-100">continue</a>
-                            </div>
-
-                        </form>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Cmn table section end -->
 
 
 
-
-
-
-    </main>
-    <!--Main section end -->
+    </main><!-- End #main -->
 
 
 
@@ -539,8 +704,6 @@
     <script src="assets/js/select2.min.js"></script>
     <!-- select2_Js_link -->
     <script src="assets/js/owl.carousel.min.js"></script>
-    <!-- intlTelInput Js link -->
-    <script src="assets/js/intlTelInput.min.js"></script>
 
 
     <!-- Main Js slink -->
