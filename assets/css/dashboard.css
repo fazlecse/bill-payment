@@ -2582,3 +2582,51 @@ Transections section start
 /*----------------------------------------------
 Transections section end
 ----------------------------------------------*/
+/*----------------------------------------------
+Paybill section start
+----------------------------------------------*/
+.paybill-category-form .form-check-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.paybill-category-form .form-check-input {
+  display: none;
+}
+.paybill-category-form .form-check-input:checked[type=radio] + .form-check-label .title {
+  color: var(--primary-color);
+}
+.paybill-category-form .form-check-input:checked[type=radio] + .form-check-label .icon-box {
+  background-color: var(--primary-color-opacity-low);
+  border: 1px solid transparent;
+}
+.paybill-category-form .form-check-input:checked[type=radio] + .title {
+  color: var(--primary-color);
+}
+.paybill-category-form .category-box {
+  text-align: center;
+}
+.paybill-category-form .category-box .icon-box {
+  padding: 15px;
+  border: 1px solid var(--primary-color-opacity-low);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.paybill-category-form .category-box .icon-box svg {
+  width: 45px;
+  height: 45px;
+}
+.paybill-category-form .category-box .title {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: var(--body-color);
+}
+
+/*----------------------------------------------
+Paybill section end
+----------------------------------------------*/

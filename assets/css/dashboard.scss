@@ -32,6 +32,7 @@
     --shadow2: 0px 0px 5px 0px rgba(0, 0, 0, 0.10);
     --shadow3: 5px 5px 20px rgba(54, 97, 252, .15);
     --transition: all .3s ease-in-out;
+
 }
 
 // Dark theme section start
@@ -3113,4 +3114,69 @@ Transections section start
 
 /*----------------------------------------------
 Transections section end
+----------------------------------------------*/
+
+/*----------------------------------------------
+Paybill section start
+----------------------------------------------*/
+.paybill-category-form {
+    .form-check-label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        cursor: pointer;
+    }
+
+    .form-check-input {
+        display: none;
+    }
+
+    .form-check-input:checked[type=radio]+.form-check-label {
+        .title {
+            color: var(--primary-color);
+        }
+
+        .icon-box {
+            background-color: var(--primary-color-opacity-low);
+            border: 1px solid transparent;
+
+        }
+
+    }
+
+    .form-check-input:checked[type=radio]+.title {
+        color: var(--primary-color);
+
+    }
+
+    .category-box {
+        text-align: center;
+
+        .icon-box {
+            padding: 15px;
+            border: 1px solid var(--primary-color-opacity-low);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            svg {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        .title {
+            margin-top: 10px;
+            margin-bottom: 0;
+            color: var(--body-color);
+        }
+    }
+}
+
+/*----------------------------------------------
+Paybill section end
 ----------------------------------------------*/
