@@ -331,5 +331,12 @@ function setTheme() {
 }
 setTheme();
 // Dark theme end
+// International Telephone Input start
+const input = document.querySelector("#telephone");
+window.intlTelInput(input, {
+    initialCountry: "bd",
+    separateDialCode: true,
+});
+// International Telephone Input end
 
 

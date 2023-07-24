@@ -347,6 +347,10 @@ textarea.form-control {
     height: initial;
 }
 
+.form-label {
+    font-size: 14px;
+}
+
 .form-control {
     color: var(--black);
 }
@@ -399,18 +403,12 @@ textarea.form-control {
 }
 
 .form-select {
-    background-image: url(../img/shipment_calculator/downward-arrow.png);
+    background-image: url(../img/arrow/arrow-down-sign-to-navigate.png);
     background-repeat: no-repeat;
+    background-size: 12px;
 }
 
-.input-group-text {
-    width: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: var(--secondary-color);
-}
+
 
 // Cmn file input start
 .cmn-file-input {
@@ -3119,40 +3117,26 @@ Transections section end
 /*----------------------------------------------
 Paybill section start
 ----------------------------------------------*/
-.paybill-category-form {
-    .form-check-label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        
-        cursor: pointer;
-    }
-
-    .form-check-input {
-        display: none;
-    }
-
-    .form-check-input:checked[type=radio]+.form-check-label {
-        .title {
-            color: var(--primary-color);
-        }
-
-        .icon-box {
-            background-color: var(--primary-color-opacity-low);
-            border: 1px solid transparent;
-
-        }
-
-    }
-
-    .form-check-input:checked[type=radio]+.title {
-        color: var(--primary-color);
-
-    }
+// paybill category section start
+.paybill-category-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 
     .category-box {
         text-align: center;
+
+        &:hover {
+            .icon-box {
+                background-color: var(--primary-color-opacity-low);
+            }
+
+            .title {
+                color: var(--primary-color);
+            }
+        }
+
 
         .icon-box {
             padding: 15px;
@@ -3161,7 +3145,9 @@ Paybill section start
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
+            width: 100px;
+            height: 100px;
+            transition: var(--transition);
 
             svg {
                 width: 45px;
@@ -3177,6 +3163,19 @@ Paybill section start
     }
 }
 
+// paybill category section end
+// paybill form section start
+.paybill-form{
+    .input-group-text{
+        border: 1px solid var(--border-color1);
+        background-color: var(--primary-color);
+        color: var(--bg-color3);
+    }
+    .paybill-form-btn-area{
+        margin-top: 30px; 
+    }
+}
+// paybill form section end
 /*----------------------------------------------
 Paybill section end
 ----------------------------------------------*/

@@ -296,6 +296,10 @@ textarea.form-control {
   height: initial;
 }
 
+.form-label {
+  font-size: 14px;
+}
+
 .form-control {
   color: var(--black);
 }
@@ -347,17 +351,9 @@ textarea.form-control {
 }
 
 .form-select {
-  background-image: url(../img/shipment_calculator/downward-arrow.png);
+  background-image: url(../img/arrow/arrow-down-sign-to-navigate.png);
   background-repeat: no-repeat;
-}
-
-.input-group-text {
-  width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: var(--secondary-color);
+  background-size: 12px;
 }
 
 .cmn-file-input {
@@ -2585,46 +2581,49 @@ Transections section end
 /*----------------------------------------------
 Paybill section start
 ----------------------------------------------*/
-.paybill-category-form .form-check-label {
+.paybill-category-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  cursor: pointer;
+  gap: 15px;
 }
-.paybill-category-form .form-check-input {
-  display: none;
-}
-.paybill-category-form .form-check-input:checked[type=radio] + .form-check-label .title {
-  color: var(--primary-color);
-}
-.paybill-category-form .form-check-input:checked[type=radio] + .form-check-label .icon-box {
-  background-color: var(--primary-color-opacity-low);
-  border: 1px solid transparent;
-}
-.paybill-category-form .form-check-input:checked[type=radio] + .title {
-  color: var(--primary-color);
-}
-.paybill-category-form .category-box {
+.paybill-category-container .category-box {
   text-align: center;
 }
-.paybill-category-form .category-box .icon-box {
+.paybill-category-container .category-box:hover .icon-box {
+  background-color: var(--primary-color-opacity-low);
+}
+.paybill-category-container .category-box:hover .title {
+  color: var(--primary-color);
+}
+.paybill-category-container .category-box .icon-box {
   padding: 15px;
   border: 1px solid var(--primary-color-opacity-low);
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100px;
+  height: 100px;
+  transition: var(--transition);
 }
-.paybill-category-form .category-box .icon-box svg {
+.paybill-category-container .category-box .icon-box svg {
   width: 45px;
   height: 45px;
 }
-.paybill-category-form .category-box .title {
+.paybill-category-container .category-box .title {
   margin-top: 10px;
   margin-bottom: 0;
   color: var(--body-color);
+}
+
+.paybill-form .input-group-text {
+  border: 1px solid var(--border-color1);
+  background-color: var(--primary-color);
+  color: var(--bg-color3);
+}
+.paybill-form .paybill-form-btn-area {
+  margin-top: 30px;
 }
 
 /*----------------------------------------------
