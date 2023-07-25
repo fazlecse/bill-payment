@@ -548,9 +548,12 @@ intlTelInput end
   display: flex;
   justify-content: center;
 }
+.breadcrumb .breadcrumb-item {
+  color: var(--heading-color);
+}
 .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   content: "\f105";
-  color: var(--black);
+  color: var(--heading-color);
   font-family: "Font Awesome 6 Pro";
   font-weight: 400;
 }
