@@ -1393,7 +1393,6 @@ hr.divider:after {
 
 .dropdown-menu {
   max-height: 30rem;
-  min-width: 13rem;
   overflow-y: auto;
   border-radius: 5px;
   padding: 8px;
@@ -1886,8 +1885,12 @@ Bottom Mobile, Tab nav end
 ----------------------------------------------*/
 .hero-section {
   position: relative;
-  background-color: var(--bg-color1);
+  background: linear-gradient(rgba(133, 89, 255, 0.1), rgba(134, 90, 255, 0.1)), url(../img/background/bg-1.png);
   padding: 200px 0 100px 0;
+  background-image: url(../img/background/bg-1.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .hero-section .hero-content {
   color: var(--white);
@@ -1914,6 +1917,45 @@ Bottom Mobile, Tab nav end
 .hero-section .hero-thumb img {
   margin-top: -85px;
 }
+.hero-section .paybill-category-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 30px 25px;
+  height: 492px;
+  overflow: auto;
+}
+.hero-section .paybill-category-container .category-box {
+  text-align: center;
+}
+.hero-section .paybill-category-container .category-box:hover .icon-area {
+  background-color: var(--primary-color-opacity-low);
+}
+.hero-section .paybill-category-container .category-box:hover .title {
+  color: var(--primary-color);
+}
+.hero-section .paybill-category-container .category-box .icon-area {
+  padding: 15px;
+  border: 1px solid var(--primary-color-opacity-low);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  transition: var(--transition);
+  box-shadow: var(--shadow3);
+}
+.hero-section .paybill-category-container .category-box .icon-area svg {
+  width: 45px;
+  height: 45px;
+}
+.hero-section .paybill-category-container .category-box .title {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: var(--body-color);
+}
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .shape2 {
@@ -1926,7 +1968,7 @@ Bottom Mobile, Tab nav end
     line-height: 50px;
   }
   .hero-section {
-    padding: 180px 0 50px;
+    padding: 120px 0 50px;
     text-align: center;
   }
 }
@@ -1937,6 +1979,16 @@ Bottom Mobile, Tab nav end
     display: none;
   }
 }
+.dark-theme .hero-section {
+  background: linear-gradient(rgba(30, 32, 34, 0.05), rgba(30, 32, 34, 0.9)), url(../img/background/Overlay-2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.dark-theme .hero-section .paybill-category-container .title {
+  color: rgba(255, 255, 255, 0.6431372549);
+}
+
 /*----------------------------------------------
 Hero end
 ----------------------------------------------*/
@@ -2270,7 +2322,7 @@ Testimonial end
   margin: 10px 0;
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--border-color2);
+  border-bottom: 1px solid var(--border-color3);
 }
 .accordion-item:last-of-type {
   border-radius: 0;

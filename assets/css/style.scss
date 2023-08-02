@@ -1600,7 +1600,7 @@ hr.divider:after {
 
 .dropdown-menu {
     max-height: 30rem;
-    min-width: 13rem;
+    // min-width: 13rem;
     overflow-y: auto;
     border-radius: 5px;
     padding: 8px;
@@ -2163,8 +2163,13 @@ Bottom Mobile, Tab nav end
 ----------------------------------------------*/
 .hero-section {
     position: relative;
-    background-color: var(--bg-color1);
+    // background-color: var(--bg-color1);
+    background: linear-gradient(rgba(133, 89, 255, 0.1), rgba(134, 90, 255, 0.1)), url(../img/background/bg-1.png);
     padding: 200px 0 100px 0;
+    background-image: url(../img/background/bg-1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     .hero-content {
         color: var(--white);
@@ -2197,6 +2202,58 @@ Bottom Mobile, Tab nav end
 
     }
 
+    // paybill category start
+    .paybill-category-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 30px 25px;
+        height: 492px;
+        overflow: auto;
+
+        .category-box {
+            text-align: center;
+
+            &:hover {
+                .icon-area {
+                    background-color: var(--primary-color-opacity-low);
+                }
+
+                .title {
+                    color: var(--primary-color);
+                }
+            }
+
+
+            .icon-area {
+                padding: 15px;
+                border: 1px solid var(--primary-color-opacity-low);
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100px;
+                height: 100px;
+                transition: var(--transition);
+                box-shadow: var(--shadow3);
+
+                svg {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+
+            .title {
+                margin-top: 10px;
+                margin-bottom: 0;
+                color: var(--body-color);
+            }
+        }
+    }
+
+    // paybill category end
+
 
 }
 
@@ -2214,7 +2271,7 @@ Bottom Mobile, Tab nav end
     }
 
     .hero-section {
-        padding: 180px 0 50px;
+        padding: 120px 0 50px;
         text-align: center;
     }
 }
@@ -2229,6 +2286,24 @@ Bottom Mobile, Tab nav end
 }
 
 // Hero responsive end
+// Dark theme Hero section stat
+.dark-theme {
+    .hero-section {
+        background: linear-gradient(rgb(30 32 34 / 5%), rgb(30 32 34 / 90%)), url(../img/background/Overlay-2.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        .paybill-category-container {
+
+            .title {
+                color: #ffffffa4;
+            }
+        }
+    }
+}
+
+// Dark theme Hero section end
 
 /*----------------------------------------------
 Hero end
@@ -2696,7 +2771,7 @@ Testimonial end
     }
 
     border: none;
-    border-bottom: 1px solid var(--border-color2);
+    border-bottom: 1px solid var(--border-color3);
 }
 
 

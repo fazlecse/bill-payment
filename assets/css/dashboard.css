@@ -2247,14 +2247,15 @@ Sidebar start
     right: 0;
   }
 }
-/*--------------------------------------------------------------
-    # Main
-    --------------------------------------------------------------*/
+/*--------------------------------------------------
+Main section start
+---------------------------------------------------*/
 #main {
   margin-top: 60px;
   padding: 30px;
   transition: all 0.3s;
   background-color: var(--bg-color1);
+  min-height: calc(100vh - 125px);
 }
 #main .pagetitle {
   margin-bottom: 30px;
@@ -2264,6 +2265,11 @@ Sidebar start
   justify-content: start;
 }
 
+@media (max-width: 991px) {
+  #main {
+    min-height: calc(100vh - 185px);
+  }
+}
 @media (max-width: 991px) {
   #main .pagetitle {
     display: none;

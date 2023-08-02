@@ -633,6 +633,7 @@ intlTelInput end
 
     .breadcrumb-item {
         color: var(--heading-color);
+
         + {
             .breadcrumb-item {
                 &::before {
@@ -2660,14 +2661,16 @@ Sidebar start
 
 // Sidebar rtl end
 
-/*--------------------------------------------------------------
-    # Main
-    --------------------------------------------------------------*/
+/*--------------------------------------------------
+Main section start
+---------------------------------------------------*/
 #main {
     margin-top: 60px;
     padding: 30px;
     transition: all 0.3s;
     background-color: var(--bg-color1);
+    min-height: calc(100vh - 125px);
+
 
     .pagetitle {
         margin-bottom: 30px;
@@ -2680,6 +2683,11 @@ Sidebar start
 }
 
 // Main responsive start
+@media (max-width: 991px) {
+    #main {
+        min-height: calc(100vh - 185px);
+    }
+}
 
 @media (max-width: 991px) {
     #main {
