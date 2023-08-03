@@ -1937,7 +1937,6 @@ Bottom Mobile, Tab nav end
 }
 .hero-section .paybill-category-container .category-box .icon-area {
   padding: 15px;
-  border: 1px solid var(--primary-color-opacity-low);
   border-radius: 5px;
   display: flex;
   align-items: center;
